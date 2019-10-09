@@ -6,7 +6,6 @@ var json = fs.readFileSync("data.json")
 var template = fs.readFileSync("./templates/Product.html") + "" // in buffer
 var cardsTemplate = fs.readFileSync("./templates/Card.html") + "" 
 var overviewTemplate = fs.readFileSync("./templates/Overview.html") + ""
-var myname = "vibhanshu"
 
 json = JSON.parse(json)
 
@@ -16,7 +15,7 @@ function replace(template, product) {
     template = template.replace(/#From#/g, product["from"])
     template = template.replace(/#Nutrients#/g, product["nutrients"])
     template = template.replace(/#Price#/g, product["price"])
-    template = template.replace(/#Description#/g, product["description"])
+    template = template.replace(/#description#/g, product["description"])
     template = template.replace(/#id#/g, product["id"])
     template = template.replace(/#Quantity#/g, product["quantity"])
 
